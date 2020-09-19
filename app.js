@@ -25,8 +25,20 @@ for (i = 0; i < hours.length; i++) {
 
 };
 
+// $(document).on("click", ".saveBtn", function() {
+//     console.log($(this).prev().val());
+//     console.log($(this).parent().attr("id"))
+//   })
 var saveBtn = $(".saveBtn");
 var input = $(".description");
-saveBtn.on("click", function () {
-    localStorage.setItem("planned", JSON.stringify(input));
-});
+// saveBtn.on("click", function () {
+//     localStorage.setItem("9morn", JSON.stringify(am9));
+// var input = $(".description");
+// });
+
+// saveBtn.on("click", function () {
+//     localStorage.setItem("planned", JSON.stringify(input));
+// });
+for (i=0; i < input.length; i++) {
+    localStorage.setItem(i + 9, JSON.stringify((input[i]).value))
+};
