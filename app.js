@@ -14,20 +14,19 @@ var hr15 = $("#hour-15");
 var hr16 = $("#hour-16");
 var hr17 = $("#hour-17");
 var hours = [hr9, hr10, hr11, hr12, hr13, hr14, hr15, hr16, hr17];
-for (i=0; i < hours.length; i++) {
+for (i = 0; i < hours.length; i++) {
     if (i + 9 < currentHour) {
         hours[i].addClass("past");
-    }else if (i + 9 > currentHour) {
+    } else if (i + 9 > currentHour) {
         hours[i].addClass("future");
-    }else if (i + 9 == currentHour) {
+    } else if (i + 9 == currentHour) {
         hours[i].addClass("present");
     };
-    
-};
-// var save = $(".saveBtn");
-// var input = $(".description")
-// // save.addEventListener("click", function () {
 
-    
-// //     localStorage.setItem("description", input);
-// //   });
+};
+
+var saveBtn = $(".saveBtn");
+var input = $(".description");
+saveBtn.on("click", function () {
+    localStorage.setItem("planned", JSON.stringify(input));
+});
